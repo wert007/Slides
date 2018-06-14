@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61412291-9CAC-4F5E-AD20-FBA34AD30354}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slides</RootNamespace>
+    <AssemblyName>Slides</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeReader.cs" />
+    <Compile Include="Components\Background.cs" />
+    <Compile Include="Components\ElementCollection.cs" />
+    <Compile Include="Components\Image.cs" />
+    <Compile Include="Components\Label.cs" />
+    <Compile Include="Components\Stack.cs" />
+    <Compile Include="Components\Step.cs" />
+    <Compile Include="Components\YouTubeVideo.cs" />
+    <Compile Include="Interactives\Commands\ApplyStyleCommand.cs" />
+    <Compile Include="Interactives\Commands\AssignmentCommand.cs" />
+    <Compile Include="Interactives\Commands\AttributeCommand.cs" />
+    <Compile Include="Interactives\Commands\CaseCommand.cs" />
+    <Compile Include="Interactives\Commands\Command.cs" />
+    <Compile Include="Imports\FontImport.cs" />
+    <Compile Include="Imports\Import.cs" />
+    <Compile Include="Interactives\Commands\CommandCollection.cs" />
+    <Compile Include="Interactives\Commands\ConstructorCommand.cs" />
+    <Compile Include="Interactives\Commands\EnumCommand.cs" />
+    <Compile Include="Interactives\Commands\ForCommand.cs" />
+    <Compile Include="Interactives\Commands\FunctionCallCommand.cs" />
+    <Compile Include="Interactives\Commands\GetPropertyCommand.cs" />
+    <Compile Include="Interactives\Commands\GotoCommand.cs" />
+    <Compile Include="Interactives\Commands\GotoPositionCommand.cs" />
+    <Compile Include="Interactives\Commands\IfCommand.cs" />
+    <Compile Include="Interactives\Commands\LoopCommand.cs" />
+    <Compile Include="Interactives\Commands\OperationalCommand.cs" />
+    <Compile Include="Interactives\Commands\ParameterCommand.cs" />
+    <Compile Include="Interactives\Commands\SetPropertyCommand.cs" />
+    <Compile Include="Interactives\Commands\StyleCommand.cs" />
+    <Compile Include="Interactives\Commands\StylingCommand.cs" />
+    <Compile Include="Interactives\Commands\SwitchCommand.cs" />
+    <Compile Include="Interactives\Commands\ValueCommand.cs" />
+    <Compile Include="Interactives\Commands\VariableCommand.cs" />
+    <Compile Include="Interactives\Commands\WhileCommand.cs" />
+    <Compile Include="Interactives\Types\Color.cs" />
+    <Compile Include="Interactives\Types\Direction.cs" />
+    <Compile Include="Components\Element.cs" />
+    <Compile Include="Interactives\Types\Font.cs" />
+    <Compile Include="Interactives\Types\ImageSource.cs" />
+    <Compile Include="Interactives\Types\NoneType.cs" />
+    <Compile Include="Interactives\Types\Thickness.cs" />
+    <Compile Include="Interactives\Types\Time.cs" />
+    <Compile Include="Interactives\Types\Vector.cs" />
+    <Compile Include="IRunable.cs" />
+    <Compile Include="IScanable.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Patterns\Pattern.cs" />
+    <Compile Include="PresentationSession.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="RegExHelper.cs" />
+    <Compile Include="Styles\Instruction.cs" />
+    <Compile Include="Interactives\Interactive.cs" />
+    <Compile Include="Imports\LibraryImport.cs" />
+    <Compile Include="Presentation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Components\Slide.cs" />
+    <Compile Include="SlideVariable.cs" />
+    <Compile Include="Interactives\Commands\StaticFunctionCallCommand.cs" />
+    <Compile Include="Styles\StaticFunctions.cs" />
+    <Compile Include="Styles\Style.cs" />
+    <Compile Include="Styles\StyleValues\StyleCommandValue.cs" />
+    <Compile Include="Styles\StyleValues\StyleUnit.cs" />
+    <Compile Include="Styles\StyleValues\StyleValue.cs" />
+    <Compile Include="Styles\StyleValues\StyleValueFunc.cs" />
+    <Compile Include="Components\Title.cs" />
+    <Compile Include="Styles\StyleValues\StyleValueVariable.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="VariableValue.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

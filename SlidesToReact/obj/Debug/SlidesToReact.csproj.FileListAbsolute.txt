@@ -1,0 +1,8 @@
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\bin\Debug\SlidesToReact.dll
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\bin\Debug\SlidesToReact.pdb
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\bin\Debug\Slides.dll
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\bin\Debug\Slides.pdb
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\obj\Debug\SlidesToReact.csprojResolveAssemblyReference.cache
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\obj\Debug\SlidesToReact.csproj.CoreCompileInputs.cache
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\obj\Debug\SlidesToReact.dll
+C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\SlidesToReact\obj\Debug\SlidesToReact.pdb
