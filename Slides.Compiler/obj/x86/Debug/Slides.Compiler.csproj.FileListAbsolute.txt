@@ -1,8 +1,0 @@
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\bin\x86\Debug\Slides.Compiler.dll
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\bin\x86\Debug\Slides.Compiler.pdb
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\bin\x86\Debug\Slides.dll
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\bin\x86\Debug\Slides.pdb
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\obj\x86\Debug\Slides.Compiler.csprojResolveAssemblyReference.cache
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\obj\x86\Debug\Slides.Compiler.csproj.CoreCompileInputs.cache
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\obj\x86\Debug\Slides.Compiler.dll
-C:\Users\Wert007\Documents\Visual Studio 2017\Projects\SlidesWPF\Slides.Compiler\obj\x86\Debug\Slides.Compiler.pdb
