@@ -3,9 +3,9 @@ import font('Arial', 'Times New Roman') as arial;
 import lib('libexample.cs');
 import lib(math) as m;
 
-//<> defines Variable; Won't replace Value
+//<> defines Variable; Won't replace <Value>
 def grey(<value>) as rgb(value, value, value);
-//> may be used if Variable is only one char 
+//> may be used if Variable is only one char big
 def alphagrey(>v, >a) as rgba(v, v, v, a);
 def plainGray as grey(90);
 const plainGrey: rgb(90, 90, 90);

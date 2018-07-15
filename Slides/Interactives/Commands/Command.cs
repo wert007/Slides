@@ -12,13 +12,6 @@ namespace Slides.Interactives.Commands
 {
 	public abstract class Command : IRunable, IScanable
 	{
-		private class _Command : Command
-		{
-			public _Command() : base(null, 0)  {	}
-			public override bool EditsVariables => throw new NotImplementedException();
-			public override int LineLength => throw new NotImplementedException();
-			protected override object InnerRun(List<Variable> variables) => throw new NotImplementedException();
-		}
 		public Type ReturnType { get; private set; }
 		public int Lines { get; private set; }
 		public object Result { get; private set; }

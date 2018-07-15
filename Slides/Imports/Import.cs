@@ -5,17 +5,13 @@ namespace Slides
 {
 	public abstract class Import : IScanable
 	{
-		private class _Import : Import
-		{
-			public override object Value => throw new NotImplementedException();
-		}
 		public string Name { get; private set; }
 		public string Alias { get; private set; }
 		public abstract object Value { get; }
 
 		public int LineLength => 1;
 
-		public string RegEx => "import (font|lib)\\(" + RegExHelper.File + "\\) as " + RegExHelper.Variable + ";";
+		public static string RegEx => "import (font|lib)\\(" + RegExHelper.File + "\\) as " + RegExHelper.Variable + ";";
 
 		private Import() { }
 
@@ -28,19 +24,19 @@ namespace Slides
 		public static bool TryScan(CodeReader reader, out Import import)
 		{
 			import = null;
-			bool result = new _Import().TryScan(reader, out IScanable scanned);
+			bool result = Import.TryScan(reader, out IScanable scanned);
 			if (result)
 				import = (Import)scanned;
 			return result;
 		}
 
-		public bool TryScan(CodeReader reader, out IScanable scanned)
+		public static bool TryScan(CodeReader reader, out IScanable scanned)
 		{
 			string line = reader.NextLine();
 			return TryScan(line, out scanned);
 		}
 
-		public bool TryScan(string line, out IScanable scanned)
+		public static bool TryScan(string line, out IScanable scanned)
 		{
 			scanned = null;
 			if (!Regex.IsMatch(line, RegEx))
