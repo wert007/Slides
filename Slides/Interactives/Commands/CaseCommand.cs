@@ -19,7 +19,7 @@ namespace Slides.Interactives.Commands
 
 		public override bool EditsVariables => body.EditsVariables;
 
-		public static string RegEx => "case " + RegExHelper.Line + ":";
+		public static string RegEx => "case " + RegExHelper.Command + ":";
 
 		public override int LineLength => condition.LineLength + body.LineLength;
 

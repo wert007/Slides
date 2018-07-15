@@ -20,7 +20,7 @@ namespace Slides.Interactives.Commands
 		}
 
 		public override bool EditsVariables => true;
-		public static string RegEx => RegExHelper.Line + "." + RegExHelper.Variable + "\\(\\)";
+		public static string RegEx => RegExHelper.Variable + "." + RegExHelper.Variable + "\\(\\)";
 
 		public override int LineLength => 1;
 

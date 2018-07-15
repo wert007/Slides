@@ -32,7 +32,17 @@ namespace Slides
 		{
 			StartLine = currentLine;
 			TextLine = 0;
-			Text = text.Split(new char[] { '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries).Where(str => !str.Trim().StartsWith("//")).ToArray();
+			List<string> tmpText = new List<string>();
+			foreach (var txt in text.Split(new char[] { '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries))
+			{
+				if (string.IsNullOrWhiteSpace(txt))
+					continue;
+				string line = txt.Trim();
+				if (line.StartsWith("//"))
+					continue;
+				tmpText.Add(line);
+			}
+			Text = tmpText.ToArray();
 		}
 
 		public string NextLine()

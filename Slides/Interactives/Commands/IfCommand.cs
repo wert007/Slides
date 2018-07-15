@@ -19,7 +19,7 @@ namespace Slides.Interactives.Commands
 			this.body = body;
 		}
 
-		public static string Regex => "if\\(" + RegExHelper.Line + "\\):";
+		public static string Regex => "if\\(" + RegExHelper.Command + "\\):";
 		public override bool EditsVariables => body.EditsVariables;
 
 		public override int LineLength => 2 + body.LineLength;

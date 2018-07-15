@@ -19,7 +19,7 @@ namespace Slides.Interactives.Commands
 			this.value = value;
 		}
 
-		public static string RegEx => RegExHelper.EnumOrProperty + ": " + RegExHelper.Line;
+		public static string RegEx => RegExHelper.EnumOrProperty + ": " + RegExHelper.Command;
 		public override bool EditsVariables => true;
 
 		public override int LineLength => 1;

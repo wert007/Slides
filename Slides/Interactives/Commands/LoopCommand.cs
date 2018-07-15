@@ -16,7 +16,7 @@ namespace Slides.Interactives.Commands
 		}
 
 		public static string RegEx 
-			=> "loop\\((" + RegExHelper.Integer + "fps|" + RegExHelper.Integer + "(" + RegExHelper.Time + ")?" + "|" + RegExHelper.Integer + "fps, " + RegExHelper.Integer + "(" + RegExHelper.Time + ")?" + ")?\\): " + RegExHelper.Line;
+			=> "loop\\((" + RegExHelper.Integer + "fps|" + RegExHelper.Integer + "(" + RegExHelper.Time + ")?" + "|" + RegExHelper.Integer + "fps, " + RegExHelper.Integer + "(" + RegExHelper.Time + ")?" + ")?\\): " + RegExHelper.Command;
 		public override bool EditsVariables => loop.Command.EditsVariables;
 
 		public override int LineLength => 1;

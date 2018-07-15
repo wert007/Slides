@@ -103,6 +103,20 @@ namespace Slides.Interactives.Commands
 					return true;
 				}
 			}
+			if (Regex.IsMatch(line, RegExWholeLine(SetArrayCommand.RegEx)))
+			{
+				string variable = line.Split('[')[0];
+				string number = line.Split('[', ']')[1];
+				string command = string.Join(":", line.Split(':').Skip(1)).Trim();
+				if (Command.TryScan(command, out Command val))
+				{
+					if (int.TryParse(number, out int index))
+					{
+						scanned = new SetArrayCommand(variable, index, val);
+						return true;
+					}
+				}
+			}
 			if (Regex.IsMatch(line, ForCommand.RegEx))
 			{
 				if (ForCommand.TryScan(reader.Copy(), out ForCommand cmd))
@@ -163,13 +177,21 @@ namespace Slides.Interactives.Commands
 			}
 			if (Regex.IsMatch(line, ApplyStyleCommand.RegEx))
 			{
-				string lastHalf = line.Split('.').Last();
-				string firstHalf = line.Remove(line.Length - lastHalf.Length - 1);
-				string name = lastHalf.Trim('(', ')');
-				if (TryScan(firstHalf, out Command cmd))
+				if (line.Count(c => c == '.') > 0)
 				{
-					scanned = new ApplyStyleCommand(Style.GetByName(name), cmd);
-					return true;
+					Console.WriteLine("ApplyStyleCommand: " + line);
+					string lastHalf = line.Split('.').Last();
+					string firstHalf = line.Remove(line.Length - lastHalf.Length - 1);
+					string name = lastHalf.Trim('(', ')');
+					if (TryScan(firstHalf, out Command cmd))
+					{
+						scanned = new ApplyStyleCommand(Style.GetByName(name), cmd);
+						return true;
+					}
+				}
+				else
+				{
+					Console.WriteLine("ApplyStyleCommand: " + line);
 				}
 			}
 			//if (Regex.IsMatch(line, ValueCommand.RegEx))
@@ -337,6 +359,15 @@ namespace Slides.Interactives.Commands
 			{
 				scanned = new ValueCommand(line);
 				return true;
+			}
+			if (Regex.IsMatch(line, RegExWholeLine(CreateArrayCommand.RegEx)))
+			{
+				line = line.Trim('[', ']');
+				if(int.TryParse(line, out int length))
+				{
+					scanned = new CreateArrayCommand(length);
+					return true;
+				}
 			}
 			if (Regex.IsMatch(line, RegExWholeLine(RegExHelper.Variable)))
 			{

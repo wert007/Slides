@@ -156,6 +156,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <None Include="examples\helloWorld.sld" />
+    <None Include="examples\libexample.sld" />
+    <None Include="examples\mathlib.sld" />
+    <None Include="examples\std.sld" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -181,7 +185,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="presentation.sld">
+    <None Include="examples\presentation.sld">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">

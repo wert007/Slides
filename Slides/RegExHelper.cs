@@ -32,7 +32,7 @@ namespace Slides
 		public static string FunctionCall => Variable + "\\." + FunctionCallHeader;
 		public static string ConstructorCall => "new " + Variable + @"\((" + Value + "(, " + Value + @")*)?\)";
 		public static string Anything => @".*";
-		public static string Line => @"[^\n]+";
+		public static string Command => @"[^\n]+";
 		public static string String => @"@?'.*'";
 		public static string Value => @"(" + String + "|" + Number + "|" + Variable + "|" + EnumOrProperty + "|" + StyleValue + ")";
 		public static string ValueOrConstructor => "(" + Value + "|" + ConstructorCall + ")";

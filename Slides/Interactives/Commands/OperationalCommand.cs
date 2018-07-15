@@ -20,7 +20,7 @@ namespace Slides.Interactives.Commands
 			this.right = right;
 		}
 
-		public static string Regex => RegExHelper.Line + "(\\+|-|\\*|\\/|^|%)" + RegExHelper.Line;
+		public static string Regex => RegExHelper.Command + "(\\+|-|\\*|\\/|^|%)" + RegExHelper.Command;
 		public override bool EditsVariables => false;
 
 		public override int LineLength => 1;

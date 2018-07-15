@@ -50,6 +50,7 @@ namespace Slides.Interactives.Commands
 						return true;
 					case "image":
 					case "youtube":
+					case "noPattern":
 						return false;
 					default:
 						Console.WriteLine("Unknown command " + this);
@@ -120,6 +121,8 @@ namespace Slides.Interactives.Commands
 					return StaticFunctions.LoadYoutubeVideo(parameterValues);
 				case "pattern":
 					return Patterns.Pattern.GetByName(((VariableCommand)parameters.Parameters[0]).Name);
+				case "noPattern":
+					return null;
 				default:
 					throw new ArgumentException("No static function named " + name + ".");
 			}

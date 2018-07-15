@@ -20,7 +20,7 @@ namespace Slides.Interactives.Commands
 			this.cases.AddRange(cases);
 		}
 
-		public static string Regex => "switch\\(" + RegExHelper.Line + "\\):";
+		public static string Regex => "switch\\(" + RegExHelper.Command + "\\):";
 		public override bool EditsVariables => cases.Any(c => c.EditsVariables);
 
 		public override int LineLength => 2 + cases.Sum(c => c.LineLength);

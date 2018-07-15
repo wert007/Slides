@@ -81,6 +81,7 @@
     <Compile Include="Components\ElementCollection.cs" />
     <Compile Include="Components\Image.cs" />
     <Compile Include="Components\Label.cs" />
+    <Compile Include="Components\List.cs" />
     <Compile Include="Components\Stack.cs" />
     <Compile Include="Components\Step.cs" />
     <Compile Include="Components\YouTubeVideo.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Imports\Import.cs" />
     <Compile Include="Interactives\Commands\CommandCollection.cs" />
     <Compile Include="Interactives\Commands\ConstructorCommand.cs" />
+    <Compile Include="Interactives\Commands\CreateArrayCommand.cs" />
     <Compile Include="Interactives\Commands\EnumCommand.cs" />
     <Compile Include="Interactives\Commands\ForCommand.cs" />
     <Compile Include="Interactives\Commands\FunctionCallCommand.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Interactives\Commands\LoopCommand.cs" />
     <Compile Include="Interactives\Commands\OperationalCommand.cs" />
     <Compile Include="Interactives\Commands\ParameterCommand.cs" />
+    <Compile Include="Interactives\Commands\SetArrayCommand.cs" />
     <Compile Include="Interactives\Commands\SetPropertyCommand.cs" />
     <Compile Include="Interactives\Commands\StyleCommand.cs" />
     <Compile Include="Interactives\Commands\StylingCommand.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Interactives\Types\Font.cs" />
     <Compile Include="Interactives\Types\ImageSource.cs" />
     <Compile Include="Interactives\Types\NoneType.cs" />
+    <Compile Include="Interactives\Types\SlidesArray.cs" />
     <Compile Include="Interactives\Types\Thickness.cs" />
     <Compile Include="Interactives\Types\Time.cs" />
     <Compile Include="Interactives\Types\Vector.cs" />

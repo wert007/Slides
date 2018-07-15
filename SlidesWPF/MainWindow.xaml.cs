@@ -28,7 +28,7 @@ namespace SlidesWPF
 		{
 			InitializeComponent();
 
-			reader = CodeReader.FromFile(@".\presentation.sld");
+			reader = CodeReader.FromFile(@".\examples\presentation.sld");
 			reader.FileChanged += () => { Create(); };
 			Create();
 		}
