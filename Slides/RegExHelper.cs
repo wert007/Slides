@@ -24,18 +24,19 @@ namespace Slides
 		public static string StyleIMAGEFunction => @"image\(" + File + @"\)";
 		public static string StyleConstants => @"(red|green|blue|yellow|brown|orange|pink|black|white|gray)";
 		public static string StyleValue => Number + "(px|em|%)";
-		public static string Number => @"(" + Integer + "|" + Float + ")";
+		public static string Number => @"(" + Float + "|" + Integer + ")";
 		public static string Integer => @"\d+";
-		public static string Float => @"(\d*\.\d+|\d+f)";
+		public static string Float => @"(\d*\.\d+?|\d+f)";
 		public static string FunctionHeader => Variable + @"\((" + Variable + "(, " + Variable + @")*)?\)";
 		public static string FunctionCallHeader => Variable + @"\((" + ValueOrConstructor + "(, " + ValueOrConstructor + @")*)?\)";
 		public static string FunctionCall => Variable + "\\." + FunctionCallHeader;
 		public static string ConstructorCall => "new " + Variable + @"\((" + Value + "(, " + Value + @")*)?\)";
 		public static string Anything => @".*";
 		public static string Command => @"[^\n]+";
-		public static string String => @"@?'.*'";
+		public static string String => @"@?'.*?'";
 		public static string Value => @"(" + String + "|" + Number + "|" + Variable + "|" + EnumOrProperty + "|" + StyleValue + ")";
 		public static string ValueOrConstructor => "(" + Value + "|" + ConstructorCall + ")";
+		public static string ValueOrVariableOrConstructor => "(" + Variable + "|" + ValueOrConstructor + ")";
 		public static string EnumOrProperty => Variable + "\\." + Variable;
 		public static string Time => "(s|min|h|d)";
 	}

@@ -85,6 +85,7 @@
     <Compile Include="Components\Stack.cs" />
     <Compile Include="Components\Step.cs" />
     <Compile Include="Components\YouTubeVideo.cs" />
+    <Compile Include="DefinitionCollection.cs" />
     <Compile Include="Interactives\Commands\ApplyStyleCommand.cs" />
     <Compile Include="Interactives\Commands\AssignmentCommand.cs" />
     <Compile Include="Interactives\Commands\AttributeCommand.cs" />

@@ -156,6 +156,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <None Include="examples\deftest.sld">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="examples\helloWorld.sld" />
     <None Include="examples\libexample.sld" />
     <None Include="examples\mathlib.sld" />

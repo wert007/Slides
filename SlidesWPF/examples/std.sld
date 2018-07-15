@@ -1,4 +1,3 @@
-{
 import font('Arial', 'Times New Roman') as arial;
 import lib('libexample.cs');
 import lib(math) as m;
@@ -60,5 +59,3 @@ func foo():
     ail.add();
     ail[0][0]: m.pi;
 endfunc
-
-}

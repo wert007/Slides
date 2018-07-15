@@ -17,38 +17,41 @@ namespace Slides
 	{
 		public static Presentation Parse(CodeReader reader)
 		{
+			CodeReader r = reader.Copy();
 			Presentation presentation = new Presentation();
-			while (!reader.Done)
+			DefinitionCollection dc = DefinitionCollection.Create(r);
+			r = dc.CreateReader(r);
+			while (!r.Done)
 			{
 				var line = reader.NextLine();
 
-				if (Import.TryScan(reader.Copy(), out Import import))
+				if (Import.TryScan(r.Copy(), out Import import))
 				{
 					presentation.AddImport(import);
-					reader.Skip(import.LineLength - 1);
+					r.Skip(import.LineLength - 1);
 				}
-				else if (Style.TryScan(reader.Copy(), out Style style))
+				else if (Style.TryScan(r.Copy(), out Style style))
 				{
 					presentation.AddStyle(style);
-					reader.Skip(style.LineLength - 1);
+					r.Skip(style.LineLength - 1);
 				}
-				else if (Interactive.TryScan(reader.Copy(), out Interactive interactive))
+				else if (Interactive.TryScan(r.Copy(), out Interactive interactive))
 				{
 					presentation.AddInteractive(interactive);
-					reader.Skip(interactive.LineLength - 1);
+					r.Skip(interactive.LineLength - 1);
 				}
-				else if (Pattern.TryScan(reader.Copy(), out Pattern pattern))
+				else if (Pattern.TryScan(r.Copy(), out Pattern pattern))
 				{
 					presentation.AddPattern(pattern);
-					reader.Skip(pattern.LineLength - 1);
+					r.Skip(pattern.LineLength - 1);
 				}
-				else if (Slide.TryScan(reader.Copy(), presentation, out Slide slide))
+				else if (Slide.TryScan(r.Copy(), presentation, out Slide slide))
 				{
 					presentation.AddSlide(slide);
-					reader.Skip(slide.LineLength - 1);
+					r.Skip(slide.LineLength - 1);
 				}
 				else
-					throw new Exception("Unknown Command in Line " + reader.CurrentLine + ".");
+					throw new Exception("Unknown Command in Line " + r.CurrentLine + ": " +r.PeekLine());
 
 				Console.WriteLine(line);
 			}

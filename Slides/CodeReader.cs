@@ -37,9 +37,11 @@ namespace Slides
 			{
 				if (string.IsNullOrWhiteSpace(txt))
 					continue;
-				string line = txt.Trim();
+				string line = txt.Trim().Trim('\r', '\t');
 				if (line.StartsWith("//"))
 					continue;
+				if (line.Contains("//"))
+					line = line.Substring(0, line.IndexOf("//")).Trim().Trim('\r', '\t');
 				tmpText.Add(line);
 			}
 			Text = tmpText.ToArray();
@@ -47,15 +49,17 @@ namespace Slides
 
 		public string NextLine()
 		{
+			TextLine++;
 			if (Done)
 				return String.Empty;
-			line = Text[TextLine].Trim().Trim('\r', '\t');
-			if(line.Contains("//"))
-				line = line.Substring(0, line.IndexOf("//")).Trim().Trim('\r', '\t'); ;
-			TextLine++;
-			if(String.IsNullOrWhiteSpace(line) && !Done)
-				line = NextLine();
-			return line;
+			return Text[TextLine - 1];
+		}
+
+		internal string PeekLine()
+		{
+			if (Done)
+				return String.Empty;
+			return Text[TextLine + 1];
 		}
 
 		public string PeekPreviousLine()
