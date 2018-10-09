@@ -86,6 +86,7 @@
     <Compile Include="Components\Step.cs" />
     <Compile Include="Components\YouTubeVideo.cs" />
     <Compile Include="DefinitionCollection.cs" />
+    <Compile Include="Imports\GoogleFontImport.cs" />
     <Compile Include="Interactives\Commands\ApplyStyleCommand.cs" />
     <Compile Include="Interactives\Commands\AssignmentCommand.cs" />
     <Compile Include="Interactives\Commands\AttributeCommand.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Interactives\Types\Direction.cs" />
     <Compile Include="Components\Element.cs" />
     <Compile Include="Interactives\Types\Font.cs" />
+    <Compile Include="Interactives\Types\GoogleFont.cs" />
     <Compile Include="Interactives\Types\ImageSource.cs" />
     <Compile Include="Interactives\Types\NoneType.cs" />
     <Compile Include="Interactives\Types\SlidesArray.cs" />
@@ -144,9 +146,9 @@
     <Compile Include="Styles\StyleValues\StyleCommandValue.cs" />
     <Compile Include="Styles\StyleValues\StyleUnit.cs" />
     <Compile Include="Styles\StyleValues\StyleValue.cs" />
+    <Compile Include="Styles\StyleValues\StyleValueConstant.cs" />
     <Compile Include="Styles\StyleValues\StyleValueFunc.cs" />
     <Compile Include="Components\Title.cs" />
-    <Compile Include="Styles\StyleValues\StyleValueVariable.cs" />
     <Compile Include="Variable.cs" />
     <Compile Include="VariableValue.cs" />
   </ItemGroup>

@@ -70,6 +70,10 @@ namespace Slides.Interactives.Types
 			Left = l;
 		}
 
+		public override string ToString()
+		{
+			return "l: " + Left + " t: " + Top + " r: " + Right + " b: " + Bottom;
+		}
 
 		public static Thickness operator + (Thickness a, Thickness b)
 		{

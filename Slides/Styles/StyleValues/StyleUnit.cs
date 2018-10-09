@@ -77,6 +77,19 @@ namespace Slides.Styles
 				return false;
 			return true;
 		}
+
+		public override string ToString()
+		{
+			switch (Unit)
+			{
+				case Unit.Pixel:
+					return Value + "px";
+				case Unit.Percent:
+					return Value + "%";
+				default:
+					return base.ToString();
+			}
+		}
 	}
 	public enum Unit
 	{

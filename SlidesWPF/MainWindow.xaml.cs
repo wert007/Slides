@@ -1,5 +1,6 @@
 ﻿using Slides;
 using Slides.Interactives.Types;
+using SlidesToHTML;
 using SlidesToReact;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace SlidesWPF
 		{
 			InitializeComponent();
 
-			reader = CodeReader.FromFile(@".\examples\deftest.sld");
+			reader = CodeReader.FromFile(@".\examples\presentation.sld");
 			reader.FileChanged += () => { Create(); };
 			Create();
 		}
@@ -39,8 +40,9 @@ namespace SlidesWPF
 			presentation.Run();
 			grid.InvalidateMeasure();
 			grid.Children.Add(new PresentationWPF(presentation));
-			var react = new PresentationReact(presentation, @"C:\Users\Wert007\Desktop\reactslides\presentation.html");
-			react.Parse();
+			//var react = new PresentationReact(presentation, @"C:\Users\Wert007\Desktop\reactslides\presentation.html");
+			//react.Parse();
+			PresentationHTML.Create(@"C:\Users\Wert007\Desktop\presentation\", presentation);
 		}
 	}
 }

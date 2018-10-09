@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidesToReact", "SlidesToRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidesToWPF", "SlidesToWPF\SlidesToWPF.csproj", "{E3DD5872-5647-4AD3-9266-D8372DA776F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidesToHTML", "SlidesToHTML\SlidesToHTML.csproj", "{77BAAB11-C6BB-457A-98C5-263D8CCB074C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{E3DD5872-5647-4AD3-9266-D8372DA776F6}.Release|x64.Build.0 = Release|Any CPU
 		{E3DD5872-5647-4AD3-9266-D8372DA776F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{E3DD5872-5647-4AD3-9266-D8372DA776F6}.Release|x86.Build.0 = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|x64.Build.0 = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Debug|x86.Build.0 = Debug|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|x64.ActiveCfg = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|x64.Build.0 = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|x86.ActiveCfg = Release|Any CPU
+		{77BAAB11-C6BB-457A-98C5-263D8CCB074C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

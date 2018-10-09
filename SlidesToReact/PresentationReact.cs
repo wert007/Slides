@@ -112,13 +112,16 @@ namespace SlidesToReact
 
 		private string ParseStyle(Element element, bool isChild)
 		{
-			string result = "background: " + Convert(element.Background) + ";\n";
+			string result = "\n";
+			if(element.Background !=null)
+				result +="background: " + Convert(element.Background) + ";\n";
 			if (element.Foreground != null)
 				result += "color: " + Convert(element.Foreground) + ";\n";
 			switch (element.HorizontalAlignment)
 			{
 				case Horizontal.Left:
-					result += "left: " + Convert(element.Margin.Left.Value) + ";\n";
+					if (element.Margin.Left.Value != 0)
+						result += "left: " + Convert(element.Margin.Left.Value) + ";\n";
 					if (element is Label || element is Title)
 						result += "text-align: left;\n";
 					break;
@@ -127,7 +130,8 @@ namespace SlidesToReact
 						result += "text-align: center;\n";
 					break;
 				case Horizontal.Right:
-					result += "right: " + Convert(element.Margin.Right.Value) + ";\n";
+					if (element.Margin.Right.Value != 0)
+						result += "right: " + Convert(element.Margin.Right.Value) + ";\n";
 					if (element is Label || element is Title)
 						result += "text-align: right;\n";
 					break;
@@ -136,11 +140,13 @@ namespace SlidesToReact
 			switch (element.VerticalAlignment)
 			{
 				case Vertical.Top:
-					result += "top: " + Convert(element.Margin.Top) + ";\n";
+					if (element.Margin.Top.Value != 0)
+						result += "top: " + Convert(element.Margin.Top) + ";\n";
 					break;
 				case Vertical.Center:
 					break;
 				case Vertical.Bottom:
+					if(element.Margin.Bottom.Value != 0)
 					result += "bottom: " + Convert(element.Margin.Bottom) + ";\n";
 					break;
 				default: throw new NotImplementedException();
@@ -171,8 +177,11 @@ namespace SlidesToReact
 					result += "font-family: '" + label.Font.Name + "', " + label.Font.GetCSSGeneric() + ";\n";
 				result += "font-size: " + Convert(label.Fontsize) + ";\n";
 			}
-			result += "margin: " + Convert(element.Margin, element.VerticalAlignment, element.HorizontalAlignment) + ";\n";
-			result += "padding: " + Convert(element.Padding) + ";\n";
+			if(element.Margin.Bottom.Value != 0 || element.Margin.Top.Value != 0 || element.Margin.Left.Value != 0 || element.Margin.Right.Value != 0)
+				result += "margin: " + Convert(element.Margin, element.VerticalAlignment, element.HorizontalAlignment) + ";\n";
+			if (element.Padding.Bottom.Value != 0 || element.Padding.Top.Value != 0 || element.Padding.Left.Value != 0 || element.Padding.Right.Value != 0)
+				result += "padding: " + Convert(element.Padding) + ";\n";
+			result = result.Trim('\n');
 			return result;
 		}
 

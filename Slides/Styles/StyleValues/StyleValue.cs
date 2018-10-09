@@ -28,7 +28,7 @@ namespace Slides.Styles
 			}
 			else if (Regex.IsMatch(line, RegExHelper.StyleConstants))
 			{
-				value = new StyleValueVariable(line);
+				value = new StyleValueConstant(line);
 			}
 			else if (Regex.IsMatch(line, RegExHelper.StyleValue))
 			{

@@ -50,12 +50,11 @@ func foo():
     arr: [2];       //Array
     larr: [];       //Liste/Unbegrenztes Array
     drr: [5][7];    //Zweidimensionales Array
-    lia: [3][];     //Listen in Array
-    ail: [][3];     //Arrays in Liste
+    lia: [3];     //Listen in Array
+   
     arr[0]: m.pi;
     larr.add(m.pi);
     drr[0][0]: m.pi;
-    lia[0].add(m.pi);
-    ail.add();
-    ail[0][0]: m.pi;
+    lia[0]: [];
+	lia[0].add(m.pi);
 endfunc

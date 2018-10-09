@@ -34,6 +34,11 @@ namespace Slides.Styles
 			lines.Add(command);
 		}
 
+		public IEnumerable<IRunable> IterateRunnables()
+		{
+			return lines;
+		}
+
 		public void Apply(Element element)
 		{
 			Type type = element.GetType();
@@ -41,10 +46,10 @@ namespace Slides.Styles
 			{
 				if (line is Instruction instruction)
 				{
-					if(instruction.Property.Contains('.'))
+					if(instruction.IsSpecific)
 					{
-						string childType = instruction.Property.Split('.')[0];
-						string childProp = instruction.Property.Split('.')[1];
+						string childType = instruction.GetChildType();
+						string childProp = instruction.GetProperty();
 						if(element is Slide slide)
 						{
 							switch (childType)

@@ -200,6 +200,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SlidesToHTML\SlidesToHTML.csproj">
+      <Project>{77BAAB11-C6BB-457A-98C5-263D8CCB074C}</Project>
+      <Name>SlidesToHTML</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SlidesToReact\SlidesToReact.csproj">
       <Project>{4D82D626-2F09-40B8-A87E-CF2A30271435}</Project>
       <Name>SlidesToReact</Name>

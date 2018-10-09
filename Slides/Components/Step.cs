@@ -17,6 +17,7 @@ namespace Slides.Components
 		protected List<LoopingCommand> loops;
 		protected List<Variable> slideVariables;
 		public IEnumerable<Variable> Variables => slideVariables;
+		
 		public IEnumerable<LoopingCommand> Loops => loops;
 		public Slide Parent { get; private set; }
 		public CurrentTime Time { get; private set; }
@@ -43,7 +44,7 @@ namespace Slides.Components
 		public void ApplyStyles(List<Variable> variables)
 		{
 			variables.AddRange(slideVariables);
-			foreach(var cmd in commands.Where(c => c is ApplyStyleCommand))
+			foreach (var cmd in commands.Where(c => c is ApplyStyleCommand))
 			{
 				var res = cmd.Run(variables);
 				if (res != null)
@@ -60,7 +61,7 @@ namespace Slides.Components
 						slideVariables.Add(v);
 					}
 				}
-				}
+			}
 		}
 
 		public void CollectVariables(List<Variable> variables)

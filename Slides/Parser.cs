@@ -23,7 +23,7 @@ namespace Slides
 			r = dc.CreateReader(r);
 			while (!r.Done)
 			{
-				var line = reader.NextLine();
+				var line = r.NextLine();
 
 				if (Import.TryScan(r.Copy(), out Import import))
 				{

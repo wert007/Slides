@@ -16,7 +16,7 @@ namespace Slides
 		public int StartLine { get; private set; }
 		public int CurrentLine => StartLine + TextLine;
 		private string[] Text { get; set; }
-		public bool Done => TextLine == Text.Length;
+		public bool Done => TextLine >= Text.Length;
 		public bool EndingKeyword { get
 			{
 				return line == "endstyle" ||
@@ -49,6 +49,7 @@ namespace Slides
 
 		public string NextLine()
 		{
+			line = Text[TextLine];
 			TextLine++;
 			if (Done)
 				return String.Empty;

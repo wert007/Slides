@@ -15,6 +15,12 @@ namespace Slides.Components
 		public int CurrentStep { get; private set; }
 		public int StepsCount => steps.Count;
 		public new int LineLength => steps.Sum(s => s.LineLength) + 2;
+
+		public IEnumerable<Step> IterateSteps()
+		{
+			return steps;
+		}
+
 		public new Presentation Parent { get; private set; }
 
 		private void SetBackground(object value)

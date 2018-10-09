@@ -13,6 +13,7 @@ namespace Slides.Styles
 		public StyleValue Value { get; private set; }
 
 		public string RegEx => throw new NotImplementedException();
+		public bool IsSpecific => Property.Contains('.');
 
 		public override bool EditsVariables => true;
 
@@ -24,22 +25,28 @@ namespace Slides.Styles
 			this.Value = value;
 		}
 		
-		public object Run(Element element)
+		public string GetChildType()
 		{
-			//element.GetType().GetProperties().FirstOrDefault(p => p.Name.ToLower() == Property.ToLower()).SetValue(element, Value.Compute());
+			if (!IsSpecific)
+				return string.Empty;
+			return Property.Split('.')[0];
+		}
+
+		public string GetProperty()
+		{
+			if (!IsSpecific)
+				return Property;
+			return Property.Split('.')[1];
+		}
+
+		public object Run()
+		{
 			return Value.Compute();
 		}
 
-		//internal object Compute(List<Variable> variables)
-		//{
-		//	var variable = variables.FirstOrDefault(v => v.Name == Property);
-		//	variable.Value = Value.Compute();
-		//	return variable;
-		//}
-
 		public new object Run(object parameter)
 		{
-			return Run((Element)parameter);
+			return Run();
 		}
 
 		public static bool TryScan(CodeReader reader, out Instruction scanned)
@@ -69,7 +76,7 @@ namespace Slides.Styles
 			else if (Regex.IsMatch(line, RegExHelper.StyleConstants))
 			{
 				string name = line.Substring(property.Length + 1).Trim().Trim(';');
-				scanned = new Instruction(property, new StyleValueVariable(name));
+				scanned = new Instruction(property, new StyleValueConstant(name));
 			}
 			else if (Regex.IsMatch(line, RegExHelper.StyleValue))
 			{

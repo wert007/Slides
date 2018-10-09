@@ -22,6 +22,11 @@ namespace Slides
 			currentSlide = null;
 		}
 
+		public IEnumerable<Slide> IterateSlides()
+		{
+			return slides;
+		}
+
 		public Step RequestNext()
 		{
 			if (Index >= presentation.SlidesCount)

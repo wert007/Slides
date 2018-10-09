@@ -17,9 +17,11 @@ namespace Slides
 		List<Style> styles;
 		List<Interactive> interactives;
 		List<Pattern> patterns;
-		Style std;
+
 		public int Index;
 		public int SlidesCount => slides.Count;
+		public Style Standard { get; private set; }
+		public IEnumerable<Import> Imports => imports;
 
 		public static int Width => 1280;
 		public static int Height => 720;
@@ -52,7 +54,7 @@ namespace Slides
 		public void AddStyle(Style style)
 		{
 			if (style.Name == "std")
-				std = style;
+				Standard = style;
 			else
 				styles.Add(style);
 		}
@@ -67,7 +69,7 @@ namespace Slides
 			foreach (var slide in slides)
 			{
 				slide.CollectVariables(GetStandardVariables());
-				std.Apply(slide);
+				Standard.Apply(slide);
 				slide.ApplyStyles(GetStandardVariables());
 				slide.Run(GetStandardVariables());
 			}

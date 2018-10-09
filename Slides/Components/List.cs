@@ -9,7 +9,7 @@ namespace Slides.Components
 {
 	public class List : Stack
 	{
-		ListType listType;
+		public ListType ListType { get; private set; }
 		public string Symbol { get; set; }
 		public bool NoSpace { get; set; } = false;
 		public bool Intend { get; set; } = true;
@@ -18,11 +18,11 @@ namespace Slides.Components
 		{
 			if (type == "u")
 			{
-				listType = ListType.Unordered;
+				ListType = ListType.Unordered;
 			}
 			else if (type == "o")
 			{
-				listType = ListType.Ordered;
+				ListType = ListType.Ordered;
 			}
 			else throw new Exception("Use Arguments \"u[nordered]\" or \"o[rdered]\"");
 		}

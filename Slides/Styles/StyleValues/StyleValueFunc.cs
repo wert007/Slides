@@ -13,12 +13,12 @@ namespace Slides.Styles
 
 		public override string RegEx => RegExHelper.Anything; //TODO
 
-		string[] parameters;
+		public string[] Parameters { get; private set; }
 
 		public StyleValueFunc(string name, string[] parameters)
 		{
 			this.Name = name;
-			this.parameters = parameters;
+			this.Parameters = parameters;
 		}
 
 		public override object Compute()
@@ -26,11 +26,11 @@ namespace Slides.Styles
 			switch (Name)
 			{
 				case "rgb":
-					return FromRGB(parameters);
+					return FromRGB(Parameters);
 				case "hsv":
-					return FromHSV(parameters);
+					return FromHSV(Parameters);
 				case "image":
-					return StaticFunctions.LoadImage(parameters); //TODO: Internparsing
+					return StaticFunctions.LoadImage(Parameters); //TODO: Internparsing
 				default:
 					throw new ArgumentException("No function named " + Name + ".");
 			}
@@ -49,6 +49,11 @@ namespace Slides.Styles
 		public static Color FromHSV(params string[] parameters)
 		{
 			return Color.Gray;
+		}
+
+		public override string ToString()
+		{
+			return Name + "(" + string.Join(", ", Parameters) + ")";
 		}
 	}
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Slides
 {
-	interface IRunable
+	public interface IRunable
 	{
 		object Run(object parameter);
 	}
